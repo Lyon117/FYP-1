@@ -131,6 +131,7 @@ sudo apt install git
 git clone https://github.com/lthiery/SPI-Py.git
 cd /home/$USER/SPI-Py
 sudo python3 setup.py install
+sudo apt install python3-rpi.gpio
 ```
 * You may delete this folder after installation
 #### Clone the project repository
