@@ -9,13 +9,12 @@
 ### 1. Create an OS installer
 * Download the Raspberry Pi Imager with corresponding version of you platform in https://www.raspberrypi.org/software/.
 * Follow the instruction of the installer.
-* After the installation, select **Other general purpose OS** --> **Ubuntu** --> **Ubuntu Desktop** as Operation System and your SD card as Storage.
-* Click **WRITE** button in the imager and wait until it finish.
+* After the installation, download the Raspberry Pi OS 64 bit image from https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2021-04-09/
+* After downloading, go to the Raspberry Pi Imager, select **Use custom** and select the image that downloaded before, then select the target SD card, finally click **WRITE** button in the imager and wait until it finish.
 ### 2. Initialization of the system
 *  Insert the SD card into the Raspberry Pi
 *  Connect the Keyboard, HDMI cable to the Raspberry Pi. Once the power cable is connected, the Raspberry Pi will boot automatically. It may take some time for the first boot up.
-*  After the configuration screen of Ubuntu is shown, follow the instruction on the screen. Then wait until it finish.
-*  A reboot will be applied and follow the instruction shown on screen after reboot.
+*  After the configuration screen of the operating system is shown, follow the instruction on the screen. Then wait until it finish.
 **Please ensure your Raspberry Pi is connect to the internet**
 ### 3. Install XRDP
 * Execute the following command to the terminal to install XRDP
@@ -82,6 +81,7 @@ exit
 ```
 #### Install mysql-connector-python library
 ```bash
+sudo apt install python3-pip
 sudo pip3 install mysql-connector-python
 ```
 #### Install nginx
@@ -131,9 +131,11 @@ sudo apt install git
 git clone https://github.com/lthiery/SPI-Py.git
 cd /home/$USER/SPI-Py
 sudo python3 setup.py install
-sudo apt install python3-rpi.gpio
 ```
 * You may delete this folder after installation
+```bash
+sudo pip3 install RPi.GPIO
+```
 #### Clone the project repository
 ```bash
 git clone https://github.com/murasakiakari/FYP.git
